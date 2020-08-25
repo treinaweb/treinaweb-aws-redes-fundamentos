@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-let allowlist = ['http://localhost:4200', 'http://app.devquiz.com.br.s3-website-us-east-1.amazonaws.com', "https://app.devquiz.com.br"]
+let allowlist = ['http://localhost:4200', 'http://app.devquiz.com.br.s3-website-us-east-1.amazonaws.com', "https://app.devquiz.com.br", "http://app.devquiz.com.br"]
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -40,13 +40,6 @@ app.use('/users', usersRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
-
-// // Handle cors
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
 
 // error handler
 app.use(function (err, req, res, next) {
