@@ -18,7 +18,7 @@ export class AppComponent {
   ngOnInit() {
     this.http.get<any>('http://localhost:3000/api').subscribe(
       data => this.response = JSON.stringify(data),
-      error => this.response = error.message
+      error => this.response = error.message + "\n\n" + JSON.stringify(error.error)
     )
   }
 }
