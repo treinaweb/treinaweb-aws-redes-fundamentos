@@ -16,7 +16,7 @@ export class AppComponent {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get<any>('http://localhost:3000/api').subscribe(
+    this.http.get<any>('https://api.devquiz.com.br/api').subscribe(
       data => this.response = JSON.stringify(data),
       error => this.response = error.message + "\n\n" + JSON.stringify(error.error)
     )
